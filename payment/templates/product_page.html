@@ -4,19 +4,19 @@
 
 {% block content %}
 
+  <section>
+    <div class="product">
+      <img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
+      <div class="description">
+        <h3>Teste pagamentos</h3>
+        <h5>15 gold</h5>
+      </div>
+    </div>
+    <form action="/create-checkout-session" method="POST">
+      <button type="submit" id="checkout-button">Checkout</button>
+    </form>
+  </section>
 
-
-  <div class="container home_msg">
-    {% if user.is_authenticated %}
-      <form enctype="multipart/form-data" method="post" role="product_page">
-      {% csrf_token %}
-        <h2>Hi {{ user }}! To pay, click on this button <button type="submit" class="btn btn-success" href="{% url 'product_page' %}" data-bind-href="pricing">Payment</button></h2>
-      </form>
-    {% else %}
-      <h2>You're not logged in...</h2><a href="{% url 'login' %}" class="btn btn-secondary">Log in</a>
-
-    {% endif %}
-  </div>
 
 
 {% endblock %} 
