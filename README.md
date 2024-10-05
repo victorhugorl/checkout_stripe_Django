@@ -1,2 +1,2 @@
-# gateway_pagamento
-freelancer para criar um gateway de pagamento em Django
+# Página de checkout em Django
+página simples utilizando o stripe para gerenciar pagamentos.

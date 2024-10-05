@@ -8,8 +8,6 @@ from django.views.decorators.csrf import csrf_exempt
 from decouple import config
 import time
 
-# Create your views here.
-@login_required(login_url='login') # url caso o usuário não esteja logado
 def product_page(request):
     stripe.api_key = config('STRIPE_SECRET_kEY_TEST')
     if request.method == 'POST':

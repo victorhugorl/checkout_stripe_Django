@@ -1,4 +1,5 @@
 from pathlib import Path
+from os import path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -16,8 +17,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    'payment',
-
 ]
 
 MIDDLEWARE = [
@@ -83,5 +82,12 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
+# Diretório raiz onde os arquivos estáticos ficarão depois de serem coletados (somente em produção)
+STATIC_ROOT = path.join(BASE_DIR, 'staticfiles')
+
+# Diretórios onde o Django vai procurar pelos arquivos estáticos durante o desenvolvimento
+STATICFILES_DIRS = [
+    path.join(BASE_DIR, 'static'),
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
